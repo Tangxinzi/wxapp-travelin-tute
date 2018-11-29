@@ -1,0 +1,101 @@
+<import src="/access/templates/spinner.wxml" />
+<view class="{{ options == 'diglossia' ? 'container diglossia active' : 'container diglossia' }}">
+  <view class="block theme">
+    <view class="image">
+      <image src="{{ diglossia.image }}" mode="aspectFill" />
+      <view class="box">
+        <view class="text">
+          <view class="header">{{ diglossia.title }}</view>
+          <view class="sub_header">{{ summary }}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{ diglossia.play }}" style="padding-top: 10px; width: 100%; display: block; background-color: #FFF; text-align: center">
+    <audio name="{{ diglossia.title }}" author="{{ (diglossia['info'][1]['source'] ? '来源：' + diglossia['info'][1]['source'] : '') + ' ' + (diglossia['info'][3]['reading'] ? '朗读：' + diglossia['info'][3]['reading'] : '')}}" poster="{{ diglossia.image }}" src="{{ diglossia.play }}" controls style="display: block; margin: 0 auto;"></audio>
+  </view>
+  <view class="main">
+    <view class="block content">
+      <view class="lists">
+        <view class="list" wx:key="{{ index }}" wx:for="{{ diglossia.article }}">
+          <view class="text">
+            <view class="jp">{{ item.en }}</view>
+            <view class="ch">{{ item.ch }}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="block content">
+      <ad unit-id="adunit-2fc004085f203740"></ad>
+    </view>
+  </view>
+  <template is="spinner" data="{{ isLoading }}" />
+</view>
+<view wx:if="{{ options == 'video' }}" class="{{ options == 'video' ? 'container video english active' : 'container video english' }}">
+  <view class="block theme">
+    <view class="image">
+      <video
+        hidden="{{ currentVid != 1 }}"
+        enable-danmu
+        controls
+        id="1"
+        poster="{{ currentVideoContent.image }}"
+        src="{{ currentVideoContent.video }}"/>
+      <image
+        data-vid="1"
+        bindtap="videoPlay"
+        objectFit="cover"
+        mode="aspectFill"
+        hidden="{{ currentVid == 1 }}"
+        src="{{ currentVideoContent.image }}">
+        <view class="label">{{ currentVideoContent.duration }}</view>
+      </image>
+    </view>
+  </view>
+  <scroll-view class="scroll-view_H" scroll-x style="width: 100%">
+    <view class="box">
+      <view class="text">
+        <view class="header">{{ currentVideoContent.header }}</view>
+        <view class="sub_header">{{ currentVideoContent.description }}</view>
+      </view>
+    </view>
+    <view class="button" style="display: none">
+      <view class="icon">
+        <image src="/assets/icons/like.png" mode="aspectFill" />
+        <text>123</text>
+      </view>
+      <view class="icon">
+        <image src="/assets/icons/like.png" style="transform: rotate(180deg);" mode="aspectFill" />
+        <text>123</text>
+      </view>
+      <view class="icon">
+        <image src="/assets/icons/comment.png" mode="aspectFill" />
+        <text>讨论</text>
+      </view>
+      <view class="icon">
+        <image src="/assets/icons/share.png" mode="aspectFill" />
+        <text>分享</text>
+      </view>
+    </view>
+    <view class="main">
+      <view class="items">
+        <block class="list" wx:key="{{ item.id }}" wx:for="{{ currentVideoRecommend }}">
+          <navigator
+            open-type="redirect"
+            class="item"
+            hover-class="navigator-hover"
+            url="/pages/detail/detail?id={{ item.id }}&title={{ item.header }}&active=video&type={{ item.type }}"
+          >
+            <view class="text">
+              <text class="title">{{ item.header }}</text>
+              <text class="time">{{ item.description }}</text>
+            </view>
+            <view class="image">
+              <image style="background: #CCC" src="{{ item.image }}" mode="aspectFill" />
+            </view>
+          </navigator>
+        </block>
+      </view>
+    </view>
+  </scroll-view>
+</view>

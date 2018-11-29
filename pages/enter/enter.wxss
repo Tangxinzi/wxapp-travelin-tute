@@ -1,0 +1,74 @@
+/* pages/enter/enter.wxss */
+
+.top {
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.helpme {
+  width: 20px;
+  height: 20px;
+  border: solid 1px #bebebe;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin-left: 15px;
+}
+
+.verification {
+  width: 85px;
+  height: 20px;
+  line-height: 20px;
+  font-size: 14px;
+  border: solid 1px #bebebe;
+  text-align: center;
+  border-radius: 15px;
+  margin-right: 15px;
+}
+
+.verification .add {
+  color: #f00;
+  font-weight: 700;
+  border-left: solid 1px #bebebe;
+  margin-left: 5px;
+  font-size: 16px;
+}
+
+.sign-in {
+  width: 100%;
+  height: 30vh;
+  background: #bebebe;
+  text-align: center;
+}
+
+.identity {
+  background: #abc;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.identity .model {
+  width: 30vw;
+  height: 30vw;
+  margin: 10px auto;
+  border: solid 1px #f00;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 0px 10px #f00;
+}
+
+.bottom {
+  height: 10vh;
+}

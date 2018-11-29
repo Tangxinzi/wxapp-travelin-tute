@@ -1,0 +1,21 @@
+<view class='navbar'>
+  <view class='statusbar' style="height:{{startBarHeight}}px" wx:if="{{isIphone}}"></view>
+  <view class="navbaricon" style="height:{{navgationHeight}}px">
+    <view style="height:{{navgationHeight}}px;" class='icon'>
+      <block wx:if="{{isHome}}">
+        <view class='icon'>
+          <image src='/access/images/left.png' bindtap='backPrev' class='back' wx:if="{{!isShare}}"></image>
+          <image src='/access/images/about.png' bindtap='goHome'></image>
+            <!-- <image class="userinfo-avatar" bindtap='goHome' src="{{userInfo.avatarUrl}}" background-size="cover"></image> -->
+          <!-- 微信头像接口 -->
+        </view>
+      </block>
+    </view>
+    <view style="heigth:{{navgationHeight}}px;line-height:{{navgationHeight}}px" class='title'>
+      <text>{{title}}</text>
+    </view>
+  </view>
+</view>
+<view class="topbar" style="height:{{startBarHeight + navgationHeight}}px">
+
+</view>

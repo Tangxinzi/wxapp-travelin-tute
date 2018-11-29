@@ -1,0 +1,12 @@
+<view class="container login">
+  <view class="main">
+    <form bindsubmit="bindFormSubmit">
+      <input value="" placeholder="用户名" name="username" />
+      <input value="" placeholder="邮件" name="email" />
+      <input value="" placeholder="密码" name="password" />
+      <button disabled="{{ disabled }}" form-type="submit">
+        提交
+      </button>
+    </form>
+  </view>
+</view>

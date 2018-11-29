@@ -1,0 +1,25 @@
+{
+  "pages": [
+    "pages/swiper/swiper",
+    "pages/index/index",
+    "pages/camera/camera",
+    "pages/event/event",
+    "pages/lose-index/lose-index",
+    "pages/home/home",
+    "pages/share/share",
+    "pages/user/user",
+    "pages/login/login",
+    "pages/enter/enter",
+    "pages/detail/detail",
+    "pages/logs/logs",
+    "pages/show/show",
+    "pages/card/card",
+    "pages/help/help"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#743481",
+    "navigationBarTitleText": "行在校园",
+    "navigationBarTextStyle": "#FFF"
+  }
+}

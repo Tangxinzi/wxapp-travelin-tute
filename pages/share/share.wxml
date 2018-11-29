@@ -1,0 +1,10 @@
+<view class='share-container'>
+  <view class='flex content'>
+    <view class="share">
+      <image class='share-img' src="/access/images/share1.jpg"></image>
+    </view>
+  </view>
+  <view class='flex bottom'>
+    <button class="sava-btn" type="primary" bindtap="saveImg" hover-class="button-hover">保存图片</button>
+  </view>
+</view>

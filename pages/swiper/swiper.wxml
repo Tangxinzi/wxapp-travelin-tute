@@ -1,0 +1,14 @@
+<view class="container swiper">
+  <view class="swiper-item-title swiper-item-title-decoration">
+    <block wx:for="{{ itemTitle }}" wx:key="{{ item }}">
+      <view class="{{ itemCurrent == index ? 'item-title active' : 'item-title' }}" data-itemCurrent="{{ index }}" bindtap="bindTopSwitch">
+        <text>{{ item }}</text>
+      </view>
+    </block>
+  </view>
+  <swiper class="swiper-view" bindchange="bindChange" current="{{ itemCurrent }}" duration="200">
+    <block wx:for="{{ itemTitle }}" wx:key="{{ item }}">
+      <swiper-item>{{ index + 1 + '. ' + item }}</swiper-item>
+    </block>
+  </swiper>
+</view>

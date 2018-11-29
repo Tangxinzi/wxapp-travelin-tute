@@ -1,0 +1,16 @@
+<view class='container'>
+  <view class='user-list'>
+    <view class='user-img'>
+      <image src='/access/images/about.png'></image>
+    </view>
+    <view class='user-infor'>
+      <text class='myclass'>信息技术工程学院</text>
+      <text class='myname'>计科1511-李学成</text>
+      <image class='lost-img' src='/access/images/lost.png'></image>
+    </view>
+    <view class='remark'>
+      <text class='id'>02210151116</text>
+      <text class='place'>四餐二楼</text>
+    </view>
+  </view>
+</view>

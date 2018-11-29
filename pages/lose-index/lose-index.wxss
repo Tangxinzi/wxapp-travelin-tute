@@ -1,0 +1,67 @@
+.container {
+  height: 100vh;
+  background: #f7f5f5;
+  /* background: #e9e9e9; */
+}
+
+.user-list {
+  width: 95vw;
+  height: 15vh;
+  margin: 0 auto;
+  border-radius: 5px;
+  background: #fff;
+  /* background: #f7f5f5; */
+  margin-top:8px;
+}
+
+.user-img {
+  height: 100%;
+  width: 25vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  float: left;
+}
+
+.user-img image {
+  width: 60px;
+  height: 60px;
+}
+
+.user-infor {
+  width: 70vw;
+  height: 70%;
+  float: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  border-bottom: dashed 1px #e9e9e9;
+}
+
+.myclass {
+  font-size: 14px;
+  display: block;
+}
+.lost-img{
+  width:58px;
+  height: 58px;
+  position: absolute;
+  /* z-index: 10; */
+  right: 15px;
+}
+.myname {
+  font-size: 18px;
+}
+
+.remark {
+  width:70vw;
+  font-size: 14px;
+  float:right;
+}
+
+.place {
+  float: right;
+  margin-right: 10px;
+}

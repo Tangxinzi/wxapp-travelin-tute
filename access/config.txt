@@ -1,0 +1,8 @@
+App ID - wxb30ca96566d438b5
+App Secret - 6a452792a2ffc21b61898e8f2389eaf3
+https://api.weixin.qq.com/sns/jscode2session?appid=wxb30ca96566d438b5&secret=6a452792a2ffc21b61898e8f2389eaf3&js_code=021dITSI0Wlxlh2pumSI0iAXSI0dITSx&grant_type=authorization_code
+Ferer2018Tangxinzi
+{
+  session_key: "mnm4nh2LsCNPFpZCX7lwqg==",
+  openid: "oxrZG45f8Ge1selVubTRTe9pRfVU"
+}

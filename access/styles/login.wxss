@@ -1,0 +1,46 @@
+.container.login .main {
+  margin: 10px 10px 15px;
+}
+
+.container.login .main textarea,
+.container.login .main input {
+  border: 1px solid #ededed;
+  width: 100%;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  padding: 3px 5px 3px 8px;
+  box-sizing: border-box;
+}
+
+/*.container.login .main textarea {
+  padding: 5px 5px 5px 8px;
+}*/
+
+.container.login .main input {
+  height: 38px;
+  line-height: 38px;
+}
+
+.container.login .main button {
+  font-size: 14px;
+  font-weight: 700;
+  color: rgba(0, 0, 0, .6);
+  background-color: #e0e1e2;
+}
+
+.container.login .group {
+  margin-top: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container.login .group text {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.container.login .main button::after {
+  border-width: 0
+}

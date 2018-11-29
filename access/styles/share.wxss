@@ -1,0 +1,48 @@
+/* pages/share/share.wxss */
+
+.share-container {
+  width: 100%;
+  height: 100vh;
+}
+
+.share-container .content {
+  height: 90vh;
+  background: rgb(219, 224, 219);
+}
+
+.share-container .share {
+  width: 88vw;
+  height: 70vh;
+  border: solid 1px #bdbdbd;
+  margin: 0 auto;
+}
+
+.share-container .share-img {
+  width: 100%;
+  height: 100%;
+}
+
+.share-container .bottom {
+  width: 100%;
+  height: 10vh;
+  background: #e9f0e9;
+  border-top: solid 1px #bdbdbd;
+  margin-top: -1px;
+}
+
+.share-container .sava-btn {
+  width: 88vw;
+  height: 7vh;
+  background: #5e3763;
+  display: block;
+  color: #fff;
+  text-align: center;
+  margin: 0 auto;
+  border-radius: 5px;
+  font-size: 16px;
+  line-height: 7vh;
+}
+
+.share-container .bottom .button-hover {
+  background-color: rgba(94, 55, 99, 0.8);
+}

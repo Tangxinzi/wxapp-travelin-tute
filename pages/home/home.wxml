@@ -1,0 +1,57 @@
+<view class='container home'>
+  <view class='top'>
+    <view class='top-bg'></view>
+    <view class='title'>
+      <image class='logo' src='/access/images/title-img.jpg'></image>
+    </view>
+  </view>
+  <view class='content'>
+    <view class='manager'>
+      <text>一卡通管理</text>
+      <view class='manager-con'>
+        <view class="flex column" hover-class='hover'>
+          <view class='flex'>
+            <image class='lost-img' src='/access/images/lost-img.png' mode="aspectFill"></image>
+            <text>我是失主 · 前往找寻</text>
+          </view>
+          <image class='next' src="/access/images/next.png" mode="aspectFill" />
+        </view>
+        <view class='separate'></view>
+        <view class="flex column" hover-class='hover'>
+          <view class='flex'>
+            <image class='lost-img' src='/access/images/return-img.png' mode="aspectFill"></image>
+            <text>我是雷锋 · 前来归还</text>
+          </view>
+          <image class='next' src="/access/images/next.png" mode="aspectFill" />
+        </view>
+      </view>
+    </view>
+    <view class='manager'>
+      <text>用户信息</text>
+      <view class='manager-con'>
+        <view class="flex column" hover-class='hover'>
+          <view class='flex'>
+            <image class='lost-img' src='/access/images/analysis.png' mode="aspectFill"></image>
+            <text>数据分析 · 丢失统计</text>
+          </view>
+          <image class='next' src="/access/images/next.png" mode="aspectFill" />
+        </view>
+        <view class='separate'></view>
+        <view class="flex column" hover-class='hover'>
+          <view class='flex'>
+            <image class='lost-img' src='/access/images/real.png' mode="aspectFill"></image>
+            <text>我的信息 · 实名认证</text>
+          </view>
+          <image class='next' src="/access/images/next.png" mode="aspectFill" />
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='flex bottom '>
+    <view class='flex bottom-con'>
+      <navigator>使用帮助</navigator>
+      <text>|</text>
+      <navigator>意见反馈</navigator>
+    </view>
+  </view>
+</view>

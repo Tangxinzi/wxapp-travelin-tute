@@ -1,0 +1,39 @@
+.container.swiper .swiper-item-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 14px;
+  font-weight: 500;
+  height: 6vh;
+  background-color: #743481;
+  color: #FFF;
+}
+
+.container.swiper .swiper-item-title .item-title::after {
+  content: '';
+  display: block;
+  border-bottom: 2px solid #743481;
+  border-radius: 10px;
+  position: relative;
+  width: 100%;
+  bottom: -3px;
+  transition: .3s;
+}
+
+.container.swiper .swiper-item-title .item-title.active::after {
+  border-bottom: 2px solid #FFF;
+}
+
+.container.swiper .swiper-view {
+  width: 100vw;
+  height: 94vh;
+  background-color: #FFFFFF;
+}
+
+swiper-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}

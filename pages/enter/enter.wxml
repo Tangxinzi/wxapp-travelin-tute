@@ -1,0 +1,22 @@
+<!--pages/enter/enter.wxml-->
+<view class='container'>
+  <component-navbar title="行在校园">
+  </component-navbar>
+  <view class='top'>
+    <navigator class='helpme' url='/pages/help/help'>
+      <view>?</view>
+    </navigator>
+    <navigator class='verification' url='/pages/user/user'>
+      <text>实名认证</text>
+      <text class='add'>+</text>
+    </navigator>
+  </view>
+  <view class='sign-in'>
+    签到模块
+  </view>
+  <view class='identity'>
+    <navigator class='model' url='/pages/index/index'>我是失主</navigator>
+    <navigator class='model' url='/pages/index/index'>我是雷锋</navigator>
+  </view>
+  <view class='bottom'></view>
+</view>

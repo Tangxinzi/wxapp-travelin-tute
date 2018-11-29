@@ -1,0 +1,54 @@
+.navbar{
+  position:fixed;
+  left:0;
+  top:0;
+  width:100%;
+  background: #0d55a1;
+}
+.navbaricon{
+  position: relative;
+}
+.navbaricon image{
+  width:20px;
+  height:20px;
+  padding:0 10px;
+  margin:5px 0;
+}
+.navbaricon .back{
+  border-right:solid 1px #f6f6f6;
+}
+.navbaricon .icon{
+  /* position: absolute; */
+  left:0;
+  top:0;
+  z-index: 9999;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  /* margin-left: 10px; */
+}
+.navbaricon .icons{
+  border-radius: 32px;
+  border:solid 1px #f6f6f6;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  
+}
+.navbaricon .title{
+  position:absolute;
+  left:0;
+  top:0;
+  text-align: center;
+  width:100%;
+  color:#f6f6f6;
+}
+
+/* .userinfo-avatar {
+  width: 28rpx;
+  height: 28rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+} */

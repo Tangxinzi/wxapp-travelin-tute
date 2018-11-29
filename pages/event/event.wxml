@@ -1,0 +1,115 @@
+<import src="/access/templates/spinner.wxml" />
+<import src="/access/templates/footer.wxml" />
+<view class="container event" bindtouchmove="scroll">
+  <view class="main theme">
+    <view class="uploader__bd">
+      <view wx:if="{{ !path }}" class="uploader__input-box">
+        <view class="uploader__input" bindtap="onChooseImage"></view>
+      </view>
+      <view wx:else class="uploader__files">
+          <view class="uploader__file" data-src="{{ path }}" data-id="{{ result['file_result']['$loki'] }}" bindtap="onPreviewImage" bindlongpress="onLongpressImage">
+            <image class="uploader__img" src="{{ path }}" mode="aspectFill" />
+          </view>
+      </view>
+    </view>
+    <view wx:if="{{ path }}" class="uploader__fd" data-id="{{ result['file_result']['$loki'] }}" bindtap="onLongpressImage">
+      <view wx:if="{{ result['face_result']['error_code'] == 0 }}" class="flex">
+        <view class="flex__item right">
+          <text class="num">{{ result['face_result']['result']['face_list'][0]['beauty'] - result['face_result']['result']['face_list'][0]['beauty'] % 1 + 10 }}</text>
+          <text class="word">颜</text>
+        </view>
+        <view class="flex__item">
+          <text class="num">{{ result['face_result']['result']['face_list'][0]['age'] }}</text>
+          <text class="word">岁</text>
+        </view>
+        <text class="face_shape_type">{{ face_shape_type }}</text>
+      </view>
+      <view wx:if="{{ result['face_result']['error_code'] == 222202 }}" class="flex none">
+        <view class="flex__item">
+          <text class="num"> 😄，未检出人脸</text>
+        </view>
+      </view>
+    </view>
+    <view wx:else class="uploader__fd" bindtap="onChooseImage">
+      <view class="flex none">
+        <view wx:if="{{ message.message == 'ESOCKETTIMEDOUT' }}" class="flex__item">
+          <text class="num">失败了</text>
+          <text class="face_shape_type">可能文件太大了，可以重新试试 ：）</text>
+        </view>
+        <view wx:else class="flex__item">
+          <text class="num">{{ isLoadingImage ? (progress < 100 ? '请稍候' : '马上反馈结果') : '选张自拍照'}}</text>
+          <text class="face_shape_type">{{ isLoadingImage ? (progress < 100 ? '图片正在上传... ' + progress + '%' : '已上传完成，马上就好啦...') : '给你的人脸打打分 ：）'}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="{{ active == 'english' ? 'main english active' : 'main english' }}">
+    <view class="items">
+      <image class="down" bindtap="onSwitchItem" data-word="" src="/access/images/down.png" mode="aspectFill" />
+      <block wx:for="{{ dataset }}" wx:key="{{ index }}">
+        <navigator
+          open-type="navigate"
+          class="item"
+          hover-class="navigator-hover"
+          url="/pages/detail/detail?id={{ item.id }}&text={{ item.summary }}&active=diglossia"
+        >
+          <view class="text">
+            <text class="title">{{ item.title }}</text>
+            <text class="time">{{ item.info.time }}</text>
+            <text class="info">{{ (item.info.author ? '作者：' + item.info.author : '') + (item.info.source ? '（' + item.info.source + '）' : '') }}</text>
+          </view>
+          <view class="image">
+            <image src="{{ item.image }}" mode="aspectFill" />
+          </view>
+        </navigator>
+      </block>
+    </view>
+    <template is="spinner" data="{{ isLoading }}" />
+  </view>
+  <view class="{{ active == 'privacy' ? 'main privacy active' : 'main privacy' }}">
+    <!-- <navigator url="/pages/posts/show?id={{ item.id }}" class="media-box media-box_appmsg" wx:for="{{ entities }}" wx:key="{{ item.id }}">
+      <view class="media-box__hd media-box__hd_in-appmsg"
+        wx:if="{{ item.featured_media }}">
+        <image class="media-box__thumb"
+          src="{{ item._embedded['wp:featuredmedia'][0].media_details.sizes.thumbnail.source_url }}" />
+      </view>
+      <view class="media-box__bd media-box__bd_in-appmsg">
+        <view class="media-box__title">
+          {{ item.title.rendered }}
+        </view>
+        <view class="media-box__desc">
+          {{ item.excerpt.plaintext }}
+        </view>
+      </view>
+    </navigator>
+    <template is="spinner" data="{{ isLoading }}" />
+    <template is="footer" data="{{ isEarth }}" /> -->
+    <view class="items">
+      <image class="down" bindtap="onSwitchItem" data-word="" src="/access/images/down.png" mode="aspectFill" />
+      <block wx:for="{{ entities }}" wx:key="{{ item.id }}">
+        <navigator
+          open-type="navigate"
+          class="item"
+          hover-class="navigator-hover"
+          url="/pages/show/show?id={{ item.id }}"
+        >
+          <view class="text">
+            <text class="title">{{ item.title.rendered }}</text>
+            <text class="time">{{ item.excerpt.plaintext }}</text>
+          </view>
+          <view class="image">
+            <image src="{{ item._embedded['wp:featuredmedia'][0].media_details.sizes.thumbnail.source_url }}" mode="aspectFill" />
+          </view>
+        </navigator>
+      </block>
+    </view>
+    <template is="spinner" data="{{ isLoading }}" />
+    <template is="footer" data="{{ isEarth }}" />
+  </view>
+  <view class="page__ft footer__links">
+    <!-- <text bindtap="onAlert" data-word="privacy">隐私条款</text> -->
+    <text bindtap="onSwitchItem" data-word="privacy">教育服务</text>
+    <text bindtap="onSwitchItem" data-word="english">英语学习</text>
+    <button open-type="feedback" session-from="weapp">意见反馈</button>
+  </view>
+</view>
