@@ -1,0 +1,64 @@
+<import src="/libs/towxml/entry.wxml" />
+
+<template name="swiper-item">
+  <view class="item button">
+    <view class="header">
+      <view class="author">
+        <image class="avatar" src="{{ item._embedded['author'][0].avatar_urls['48'] }}" mode="aspectFill" />
+        <view class="username">
+          <text class="name">{{ item._embedded['author'][0].name }}</text>
+          <text class="description">{{ item._embedded['author'][0].description }}</text>
+        </view>
+      </view>
+      <view class="info">
+        <text class="time">{{ item.format }}</text>
+      </view>
+    </view>
+    <view class="content">
+      <view class="text">
+        <text class="title">{{ item.title.rendered }}</text>
+        <view class="wp-block">
+          <!-- {{ item.excerpt.rendered }} -->
+          <template is="entry" data="{{ ...item.content.wxml }}" />
+        </view>
+      </view>
+      <view wx:if="{{ item._embedded['wp:featuredmedia'][0].media_details.sizes.full.source_url }}" class="image">
+        <image src="{{ item._embedded['wp:featuredmedia'][0].media_details.sizes.full.source_url }}" mode="aspectFill" />
+      </view>
+    </view>
+    <view class="tags" wx:if="{{ item._embedded['wp:term'][1].length }}">
+      <text class="tag" wx:for="{{ item._embedded['wp:term'][1] }}" wx:key="{{ item.id }}">{{ item.name }}</text>
+    </view>
+  </view>
+</template>
+
+<template name="swiper-item-english">
+  <view class="items">
+    <navigator
+      style="margin-bottom: 3vw; padding: 3vw 3vw;"
+      open-type="navigate"
+      hover-class="navigator-hover"
+      url="/pages/totalk/totalk"
+    >
+      <text>Hello，一起来了解我们的新功能，面对面同声传译。</text>
+      <image class="next" src="/access/images/next.png" mode="aspectFill" style="width: 15px; height: 15px;" />
+    </navigator>
+    <block wx:for="{{ dataset }}" wx:key="{{ index }}">
+      <navigator
+        open-type="navigate"
+        class="item"
+        hover-class="navigator-hover"
+        url="/pages/detail/detail?id={{ item.id }}&text={{ item.summary }}&active=diglossia"
+      >
+        <view class="text">
+          <text class="title">{{ item.title }}</text>
+          <text class="time">{{ item.info.time }}</text>
+          <text class="info">{{ (item.info.author ? '作者：' + item.info.author : '') + (item.info.source ? '（' + item.info.source + '）' : '') }}</text>
+        </view>
+        <view class="image">
+          <image class="theme" src="{{ item.image }}" mode="aspectFill"></image>
+        </view>
+      </navigator>
+    </block>
+  </view>
+</template>

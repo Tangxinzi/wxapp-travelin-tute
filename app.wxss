@@ -1,12 +1,19 @@
-@import '/towxml/style/main.wxss';
+@import '/libs/towxml/style/main.wxss';
 @import '/access/styles/user.wxss';
 @import '/access/styles/login.wxss';
 @import '/access/styles/home.wxss';
 @import '/access/styles/share.wxss';
+@import '/access/styles/all.wxss';
+@import '/access/styles/english.wxss';
 
 page {
   background: #f8f8f8;
   /* font-family: "STHeitiTC-Light", "Microsoft YaHei Light", "Hiragino Sans GB", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; */
+}
+
+image,
+video {
+  width: 100%
 }
 
 .container .hover,
@@ -36,7 +43,7 @@ page {
 .spinner view {
   width: 18px;
   height: 18px;
-  background-color: #FFF;
+  background-color: #000;
 
   border-radius: 100%;
   display: inline-block;

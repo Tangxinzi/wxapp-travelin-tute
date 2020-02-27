@@ -1,0 +1,80 @@
+.container.english {
+  background-color: #FFF;
+}
+
+.english .items {
+  padding: 3vw;
+  width: 94vw;
+}
+
+.english .items navigator {
+  font-size: 12px;
+  box-shadow: 0px 0px 5px rgba(220, 220, 220, .9);
+  border-radius: 4px;
+  padding: 2vw 3vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.english .items .item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.english .item + .item {
+  margin-top: 10px;
+}
+
+.english .items .item .image {
+  font-size: 0
+}
+
+.english .items .item image {
+  width: 130px;
+  height: 80px;
+  border-radius: 3px;
+}
+
+.english .items .text {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-left: 0px;
+  margin-right: 8px;
+  height: 80px;
+  text-align: left;
+}
+
+.english .items .text .title {
+  font-size: 15px;
+  font-weight: 600;
+  height: 38px;
+  line-height: 19px;
+  margin-top: 2px;
+}
+
+.english .navigator-hover {
+  background-color: transparent;
+  opacity: .95;
+  background-color: #eee;
+  border-radius: 3px;
+}
+
+.english .items .text .time {
+  font-size: 12px;
+  font-weight: 400;
+  color: #999999;
+  margin-top: 4px;
+  height: 35px;
+  overflow: hidden;
+}
+
+.english .items .text .info {
+  font-size: 12px;
+  font-weight: 400;
+  color: #999999;
+}

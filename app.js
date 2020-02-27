@@ -1,4 +1,4 @@
-import Towxml from '/towxml/main'
+import Towxml from '/libs/towxml/main'
 
 App({
   towxml: new Towxml(),

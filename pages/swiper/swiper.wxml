@@ -1,4 +1,15 @@
+<import src="/libs/towxml/entry.wxml" />
+<import src="/access/templates/spinner.wxml" />
+<import src="/access/templates/swiper-item.wxml" />
+
 <view class="container swiper">
+  <swiper class="swiper-container" wx:if="{{ entities_home_carousel_map.length }}" indicator-dots="{{ true }}" indicator-color="rgba(255, 255, 255, 0.5)" indicator-active-color="rgba(255, 255, 255, 1)" autoplay="{{ true }}" circular="{{ true }}" interval="3000">
+    <swiper-item wx:for="{{ entities_home_carousel_map }}" wx:key="{{ item.id }}">
+      <navigator url="/pages/posts/show?id={{ item.id }}">
+        <image src="{{ item._embedded['wp:featuredmedia'][0].source_url }}" mode="aspectFill" />
+      </navigator>
+    </swiper-item>
+  </swiper>
   <view class="swiper-item-title swiper-item-title-decoration">
     <block wx:for="{{ itemTitle }}" wx:key="{{ item }}">
       <view class="{{ itemCurrent == index ? 'item-title active' : 'item-title' }}" data-itemCurrent="{{ index }}" bindtap="bindTopSwitch">
@@ -6,9 +17,48 @@
       </view>
     </block>
   </view>
-  <swiper class="swiper-view" bindchange="bindChange" current="{{ itemCurrent }}" duration="200">
-    <block wx:for="{{ itemTitle }}" wx:key="{{ item }}">
-      <swiper-item>{{ index + 1 + '. ' + item }}</swiper-item>
-    </block>
+  <swiper class="swiper-view" bindchange="bindChange" current="{{ itemCurrent }}" duration="100" style="{{ swiperItemHeight > 0 ? 'height: ' + (swiperItemHeight + 100) + 'px' : 'auto' }}">
+    <swiper-item>
+      <view class="{{ itemCurrent == 0 ? 'container all active' : 'container all' }}">
+        <view class="items">
+          <block wx:for="{{ entities_all }}" wx:key="{{ index }}">
+            <template is="swiper-item" data="{{ item }}" />
+          </block>
+        </view>
+        <!-- <template is="spinner" data="{{ isLoading }}" /> -->
+      </view>
+    </swiper-item>
+    <swiper-item>
+      <view class="{{ itemCurrent == 1 ? 'container all hot active' : 'container all hot' }}">
+        <view class="items">
+          <block wx:for="{{ entities_home_hot }}" wx:key="{{ index }}">
+            <template is="swiper-item" data="{{ item }}" />
+          </block>
+        </view>
+      </view>
+    </swiper-item>
+    <swiper-item>
+      <view class="{{ itemCurrent == 2 ? 'container all recruitment active' : 'container all recruitment' }}">
+        <view class="items">
+          <block wx:for="{{ entities_recruitment }}" wx:key="{{ index }}">
+            <template is="swiper-item" data="{{ item }}" />
+          </block>
+        </view>
+      </view>
+    </swiper-item>
+    <swiper-item>
+      <view class="{{ itemCurrent == 3 ? 'container english active' : 'container english' }}">
+        <template is="swiper-item-english" data="{{ dataset }}" />
+      </view>
+    </swiper-item>
+    <swiper-item>
+      <view class="{{ itemCurrent == 4 ? 'container all school active' : 'container all school' }}">
+        <view class="items">
+          <block wx:for="{{ entities_home_school_life }}" wx:key="{{ index }}">
+            <template is="swiper-item" data="{{ item }}" />
+          </block>
+        </view>
+      </view>
+    </swiper-item>
   </swiper>
 </view>

@@ -1,0 +1,145 @@
+.container.all {
+  background-color: #FFF;
+}
+
+.all .items {
+  padding: 3vw;
+  width: 94vw;
+}
+
+.all .items view.button {
+  font-size: 15px;
+  box-shadow: 0px 0px 5px rgba(220, 220, 220, .9);
+  border-radius: 4px;
+  padding: 3vw;
+}
+
+.all .item + .item {
+  margin-top: 15px;
+}
+
+.all .items .item .image {
+  font-size: 0
+}
+
+/* .all .items .item image {
+  width: 130px;
+  height: 80px;
+  border-radius: 3px;
+} */
+
+.all .items .header {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.all .items .header .author {
+  display: flex;
+  align-items: center;
+}
+
+.all .items .header .author .username {
+  display: flex;
+  flex-direction: column;
+}
+
+.all .items .header .author .username .description {
+  color: #9a9a9a;
+  font-size: 12px;
+}
+
+.all .items .header .author image {
+  margin-right: 10px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+}
+
+/* .all .items .header text {
+  height: 30px;
+  line-height: 30px;
+} */
+
+.all .items .text .title {
+  font-size: 15px;
+  font-weight: 600;
+  display: block;
+  margin-top: 20rpx;
+  margin-bottom: 15rpx;
+}
+
+.all .navigator-hover {
+  background-color: transparent;
+  opacity: .95;
+  background-color: #eee;
+  border-radius: 3px;
+}
+
+.all .items .header .time {
+  display: block;
+  font-weight: 400;
+  color: #747474;
+}
+
+.all .items .header .info {
+  font-size: 12px;
+  font-weight: 400;
+  color: #999999;
+  display: flex;
+  align-items: flex-end;
+}
+
+.all .tags {
+  margin-top: 10px;
+}
+
+.all .tags .tag {
+  font-size: 12px;
+  padding: .8vw 2.2vw;
+  background-color: rgba(217, 217, 217, 0.84);
+  margin-right: 10px;
+  border-radius: 20px;
+}
+
+.all .content .h2w__main,
+.all .content .wp-block-gallery.h2w__ul,
+.all .content .wp-block-gallery.h2w__ol {
+  margin: 0;
+  padding: 0;
+}
+
+/* 图床 */
+.all .content .h2w__li.blocks-gallery-item {
+  width: 33.33%;
+  padding: .5px;
+  box-sizing: border-box;
+  display: inline-block;
+}
+
+.all .content .h2w__li.blocks-gallery-item image {
+  border-radius: 0;
+  width: 100%;
+  height: 100px !important;
+}
+
+/* 视频处理 */
+
+.wp-block .wp-block-video {
+  font-size: 0;
+}
+
+.wp-block .h2w__p {
+  margin-bottom: 10px;
+}
+
+.wp-block image {
+  width: 100%;
+  height: auto;
+}
+
+.h2w__ul,
+.h2w__ol {
+  padding-left: 1.4rem;
+}

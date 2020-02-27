@@ -3,7 +3,6 @@
     "pages/swiper/swiper",
     "pages/index/index",
     "pages/camera/camera",
-    "pages/event/event",
     "pages/lose-index/lose-index",
     "pages/home/home",
     "pages/share/share",
@@ -13,6 +12,7 @@
     "pages/detail/detail",
     "pages/logs/logs",
     "pages/show/show",
+    "pages/event/event",
     "pages/card/card",
     "pages/help/help"
   ],
@@ -20,6 +20,7 @@
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#743481",
     "navigationBarTitleText": "行在校园",
-    "navigationBarTextStyle": "#FFF"
-  }
+    "navigationBarTextStyle": "white"
+  },
+  "sitemapLocation": "sitemap.json"
 }
